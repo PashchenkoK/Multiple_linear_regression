@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+body{
+    margin-left: 0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    margin-top:0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+
+    background-image: url(https://img1.akspic.ru/image/102174-sneg-nebo-gorod-gornyj_hrebet-orientir-1920x1080.jpg);
+
+    background-attachment: fixed;
+
+}
+
+* {box-sizing: border-box;}
+.transparent {
+  position: relative;
+  max-width: 400px;
+  padding: 60px 50px;
+  margin: 50px auto 0;
+  /*background-image: url(https://html5book.ru/wp-content/uploads/2017/01/photo-roses.jpg);*/
+  background-size: cover;
+}
+.transparent:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right bottom,rgba(43, 44, 78, .9),rgba(104, 22, 96, .9));
+}
+
+.form-inner {position: relative;}
+.form-inner h3 {
+  position: relative;
+  margin-top: 0;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+.form-inner h3:after {
+  content: "";
+  position :absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 60px;
+  background: #1762EE;
+}
+.form-inner label {
+  display: block;
+  padding-left: 15px;
+  font-family: 'Roboto', sans-serif;
+  color: rgba(255,255,255,.6);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.form-inner input {
+  display: block;
+  width: 100%;
+  padding: 0 15px;
+  margin: 10px 0 15px;
+  border-width: 0;
+  line-height: 40px;
+  border-radius: 20px;
+  color: white;
+  background: rgba(255,255,255,.2);
+  font-family: 'Roboto', sans-serif;
+}
+.form-inner input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+#custom-checkbox + label {
+  position: relative;
+  margin: 20px 0;
+  text-transform:none;
+  cursor: pointer;
+}
+
+#custom-checkbox + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: text-top;
+  background: white;
+}
+#custom-checkbox:checked + label:before {background: #1762EE;}
+#custom-checkbox:checked + label:after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  left: 20px;
+  top: 9px;
+  background: white;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+.form-inner input[type="submit"] {background: #1762EE;}
+
+</style>
+</head>
+<body>
+<header>
+</header>
+
+<form  class="transparent" action = "http://localhost:5000/result" method = "post">
+   <div class="form-inner">
+    <!--<h3>Регистрация</h3>-->
+     <label for="sqft_living">Площа приміщення</label>
+     <input type="text" id="sqft_living" name="sqft_living">
+       
+     <label for="sqft_lot">Площа земельної ділянки</label>
+     <input id="sqft_lot" type="text" name="sqft_lot">
+     
+     <label for="bedrooms">Кількість спальних кімнат</label>
+     <input id="bedrooms" type="text" name="bedrooms">
+     
+     <label for="bathrooms">Кількість ванних кімнат</label>
+     <input id="bathrooms" type="text" name ="bathrooms" >
+     
+     <label for="floors">Кількість поверхів</label>
+     <input id="floors" type="text" name ="floors">
+     
+     <label for="sqft_basement">Загальна площа підвалу</label>
+     <input id="sqft_basement" type="text" name="sqft_basement">
+
+     <label for="condition">Оцініть стан будинку за шкалою від 1 до 5</label>
+     <input id="condition" type="text" name = "condition">
+
+     <label for="yr_built">Рік побудови</label>
+     <input id="yr_built" type="text" name="yr_built">
+
+     <label for="yr_renovated">Рік останнього ремонту</label>
+     <input id="yr_renovated" type="text" name ="yr_renovated">
+
+     <label for="zipcode">Поштовий код</label>
+     <input id="zipcode" type="text" name = "zipcode">
+
+     <input type="submit" value="Розрахувати  вартість будинку">
+     
+
+
+  </div>
+</form>
+
+</body>
+</html>
